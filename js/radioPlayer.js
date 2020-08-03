@@ -1,15 +1,19 @@
-export const radioPlayer = {
-    init: () => {
-        const button = {
-            play: document.querySelector('#playButton'),
-            stop: document.querySelector('#stopButton')
-        };
+export const radioPlayer = () => {
+    const audio = new Audio();
+    audio.type = 'audio/acc';
 
-        const audio = new Audio();
-        audio.type = 'audio/acc';
-        audio.src = 'http://online.radioroks.ua/RadioROKS';
+    return {
+        init: () => {
+            const button = {
+                play: document.querySelector('#playButton'),
+                stop: document.querySelector('#stopButton')
+            };
 
-        button.play.addEventListener('click', () => audio.play());
-        button.stop.addEventListener('click', () => audio.pause());
-    }
+            button.play.addEventListener('click', () => audio.play());
+            button.stop.addEventListener('click', () => audio.pause());
+        },
+        setSource: (src) => {
+            audio.src = src;
+        }
+    };
 };

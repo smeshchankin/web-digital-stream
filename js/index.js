@@ -1,3 +1,5 @@
 import { radioPlayer } from './radioPlayer.js';
 
-radioPlayer.init();
+const radio = radioPlayer();
+radio.init();
+radio.setSource('http://online.radioroks.ua/RadioROKS');
