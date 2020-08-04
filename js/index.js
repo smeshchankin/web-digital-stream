@@ -2,6 +2,19 @@ import { radioPlayer } from './radioPlayer.js';
 
 (function() {
     const radio = radioPlayer();
+    const select = document.querySelector('#radioStation');
+    const setRadioSource = (select) => {
+        const option = select.options[select.selectedIndex];
+        const url = option.value;
+        radio.setSource(url);
+    };
+
     radio.init();
-    radio.setSource('http://online.radioroks.ua/RadioROKS');
+    setRadioSource(select);
+
+    select.addEventListener('change', (event) => {
+        radio.pause();
+        setRadioSource(event.target);
+        radio.play();
+    });
 })();
