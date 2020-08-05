@@ -13,8 +13,6 @@ import { radioPlayer } from './radioPlayer.js';
     setRadioSource(select);
 
     select.addEventListener('change', (event) => {
-        radio.pause();
         setRadioSource(event.target);
-        radio.play();
     });
 })();

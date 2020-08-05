@@ -14,6 +14,7 @@ export const radioPlayer = () => {
         },
         setSource: (src) => {
             audio.src = src;
+            audio.play();
         }
     };
 };
